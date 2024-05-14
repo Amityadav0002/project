@@ -2,12 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Login from './Page/Login';
+import Registor from './Page/Registor';
+import Mylanding from './Dashboard/Mylanding'
+import Navbar from './Dashboard/Navbar';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.js"; 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <BrowserRouter>  
+      <Routes>
+        <Route path='' element={<Login />}></Route>
+        <Route path="registration" element={<Registor />}></Route>
+        <Route path="landing" element={<Mylanding />}></Route>
+        <Route path='' element={<Login />}></Route>
+
+      </Routes>
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 
